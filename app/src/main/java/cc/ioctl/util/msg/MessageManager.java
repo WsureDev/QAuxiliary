@@ -26,6 +26,7 @@ import cc.ioctl.hook.notification.AntiMessage;
 import cn.lliiooll.hook.AntiRobotMessage;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
+import me.singleneuron.hook.decorator.MessageListenerHttpd;
 import me.singleneuron.hook.decorator.RegexAntiMeg;
 import me.singleneuron.data.MsgRecordData;
 
@@ -36,8 +37,9 @@ public class MessageManager {
     private static final MessageReceiver[] receivers = {
         // 在这里添加消息处理
         RegexAntiMeg.INSTANCE,
-        AntiMessage.INSTANCE, 
+        AntiMessage.INSTANCE,
         AntiRobotMessage.INSTANCE,
+        MessageListenerHttpd.INSTANCE
     };
     public static Class<?> intType = int.class;
     public static Class<?> booleanType = boolean.class;
